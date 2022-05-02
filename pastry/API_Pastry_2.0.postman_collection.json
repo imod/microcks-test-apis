@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "8f4eac89-c0f4-49be-aa34-f2f0d65911bc",
+		"name": "API Pastry - 2.0",
+		"description": "version=2.0.0 - API definition of API Pastry sample app\n\nContact Support:  \nName: Laurent Broudoux  \nEmail: [laurent.broudoux@gmail.com](mailto:laurent.broudoux@gmail.com)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pastry",
+			"item": [
+				{
+					"name": "Get list of pastries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/pastry",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pastry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get list of pastries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pastry",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pastry"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "[{\"name\":\"Baba Rhum\",\"description\":\"Delicieux Baba au Rhum pas calorique du tout\",\"size\":\"L\",\"price\":3.2,\"status\":\"available\"},{\"name\":\"Divorces\",\"description\":\"Delicieux Divorces pas calorique du tout\",\"size\":\"M\",\"price\":2.8,\"status\":\"available\"},{\"name\":\"Tartelette Fraise\",\"description\":\"Delicieuse Tartelette aux Fraises fraiches\",\"size\":\"S\",\"price\":2,\"status\":\"available\"}]"
+						}
+					]
+				}
+			],
+			"description": "Pastry resource"
+		},
+		{
+			"name": "Get Pastry by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/pastry/:name",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pastry",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "Eclair Cafe",
+							"description": "(Required) pastry name"
+						}
+					]
+				},
+				"description": "Get Pastry by name"
+			},
+			"response": [
+				{
+					"name": "eclair",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pastry/:name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pastry",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "eclair",
+									"description": "(Required) pastry name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\"name\":\"eclair\",\"description\":\"Delicieux Eclair au Cafe pas calorique du tout\",\"size\":\"M\",\"price\":2.5,\"status\":\"available\"}"
+				},
+				{
+					"name": "cafe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pastry/:name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pastry",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "cafe",
+									"description": "(Required) pastry name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\"name\":\"cafe\",\"description\":\"Delicieux Millefeuille pas calorique du tout\",\"size\":\"L\",\"price\":4.4,\"status\":\"available\"}"
+				}
+			]
+		},
+		{
+			"name": "Patch existing pastry",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"price\": 2.6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/pastry/:name",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pastry",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "Eclair Cafe",
+							"description": "(Required) pastry name"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Changed pastry",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 2.6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pastry/:name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pastry",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Eclair Cafe",
+									"description": "(Required) pastry name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"name\": \"Eclair Cafe\",\n  \"description\": \"Delicieux Eclair au Cafe pas calorique du tout\",\n  \"size\": \"M\",\n  \"price\": 2.6,\n  \"status\": \"available\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
