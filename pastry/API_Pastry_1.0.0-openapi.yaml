@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.2
 info:
-  title: API Pastry - 2.0
+  title: API Pastry - 1.0
   version: 1.0.0
   description: API definition of API Pastry sample app
   contact:
