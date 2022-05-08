@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "8f4eac89-c0f4-49be-aa34-f2f0d65911bc",
-    "name": "API Pastry - 1.0.0",
+    "name": "API Pastry",
     "description": "version=1.0.0 - API definition of API Pastry sample app\n\nContact Support:  \nName: Laurent Broudoux  \nEmail: [laurent.broudoux@gmail.com](mailto:laurent.broudoux@gmail.com)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
